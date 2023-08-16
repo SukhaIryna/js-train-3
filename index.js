@@ -1,6 +1,8 @@
 // Задача 1: Напишіть функцію, яка перетворює рядок в число, використовуючи Number()
 
 function stringToNumber(str) {
+  let result = Number(str);
+  return result;
   // Використовуємо Number() для перетворення рядка в число
   // Повертаємо отримане число
 }
@@ -12,6 +14,10 @@ console.log('stringToNumber("42")', stringToNumber("42")); // Виведе 42
 
 function isAlmostSame(num1, num2) {
   // Визначаємо, чи є різниця між двома числами меншою або рівною EPSILON
+  const num3 = Number(num1);
+
+  let result = num3 - num2 < Number.EPSILON && num2 - num3 < Number.EPSILON;
+  return result;
 }
 
 console.log("Завдання 2 ====================================");
@@ -21,6 +27,9 @@ console.log("isAlmostSame(0.1 + 0.2, 0.3)", isAlmostSame(0.1 + 0.2, 0.3)); // В
 
 function isSafeInteger(num) {
   // Перевіряємо, чи є число меншим або рівним MAX_SAFE_INTEGER і більшим або рівним MIN_SAFE_INTEGER
+
+  let result = num <= Number.MAX_SAFE_INTEGER && num >= Number.MIN_SAFE_INTEGER;
+  return result;
 }
 
 console.log("Завдання 3 ====================================");
@@ -33,6 +42,9 @@ console.log(
 
 function isUnsafeInteger(num) {
   // Використовуємо логічну оператор НЕ (!), щоб отримати протилежну відповідь від функції isSafeInteger()
+  let result =
+    !num <= Number.MAX_SAFE_INTEGER && !num >= Number.MIN_SAFE_INTEGER;
+  return result;
 }
 
 console.log("Завдання 4 ====================================");
@@ -45,6 +57,9 @@ console.log(
 
 function isTooLarge(num) {
   // Перевіряємо, чи є число більшим за MAX_VALUE
+
+  let result = num >= Number.MAX_VALUE;
+  return result;
 }
 
 console.log("Завдання 5 ====================================");
@@ -57,6 +72,9 @@ console.log(
 
 function isAlmostZero(num) {
   // Перевіряємо, чи є число більше 0, але все ще менше за Number.MIN_VALUE
+
+  let result = num > 0 && num < Number.MIN_VALUE;
+  return result;
 }
 
 console.log("Завдання 6 ====================================");
@@ -70,6 +88,8 @@ console.log("isAlmostZero(Number.MIN_VALUE)", isAlmostZero(Number.MIN_VALUE)); /
 
 function checkIsInteger(num) {
   // Використовуємо вбудовану функцію Number.isInteger(), щоб перевірити, чи є значення цілим числом
+  let result = Number.isInteger(num);
+  return result;
 }
 
 console.log("Завдання 7 ====================================");
@@ -79,6 +99,9 @@ console.log("checkIsInteger(42.5)", checkIsInteger(42.5)); // Виведе false
 
 function checkIsSafeInteger(num) {
   // Використовуємо вбудовану функцію Number.isSafeInteger(), щоб перевірити, чи є значення безпечним цілим числом
+
+  let result = Number.isSafeInteger(num);
+  return result;
 }
 
 console.log("Завдання 8 ====================================");
@@ -91,6 +114,9 @@ console.log(
 
 function convertToExponential(num) {
   // Використовуємо метод toExponential(), щоб конвертувати число в рядок з експоненційним представленням
+
+  let result = num.toExponential(1);
+  return result;
 }
 
 console.log("Завдання 9 ====================================");
@@ -100,6 +126,8 @@ console.log("convertToExponential(42)", convertToExponential(42)); // Вивед
 
 function convertToFixed(num, precision) {
   // Використовуємо метод toFixed(), щоб конвертувати число в рядок з фіксованою кількістю знаків після коми
+  let result = num.toFixed(2);
+  return result;
 }
 
 console.log("Завдання 10 ====================================");
@@ -109,6 +137,8 @@ console.log("convertToFixed(42.9876, 2)", convertToFixed(42.9876, 2)); // Вив
 
 function convertToString(num) {
   // Використовуємо метод toString(), щоб конвертувати число в рядок
+  let result = num.toString();
+  return result;
 }
 
 console.log("Завдання 11 ====================================");
@@ -118,6 +148,8 @@ console.log("convertToString(42)", convertToString(42)); // Виведе "42"
 
 function convertToPrecision(num, precision) {
   // Використовуємо метод toPrecision(), щоб округлити число до вказаної довжини
+  let result = num.toPrecision(precision);
+  return result;
 }
 
 console.log("Завдання 12 ====================================");
